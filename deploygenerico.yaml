@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depgenerico
+  labels:
+    app: busybox
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - name: contenedor1
+          image: k8s.gcr.io/busybox
+          command: [ "/bin/sh", "-c", "sleep 1000000" ]
+          volumeMounts:
+          - name: volumen-config-map
+            mountPath: /etc/config-map
+      volumes:
+        - name: volumen-config-map
+          configMap:
+            name: mis-datos
