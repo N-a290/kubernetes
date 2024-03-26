@@ -35,3 +35,5 @@ jobs:
     - name: "Mostrar variables de entorno globales"
       run: |
         echo "Mostrando evento: ${{ toJson(github.event) }}" 
+        echo "Mostrando Github_actor: $GITHUB_ACTOR" 
+        echo "Mostrando Github_repository: $GITHUB_REPOSITORY" 
