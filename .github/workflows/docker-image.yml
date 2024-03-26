@@ -12,6 +12,10 @@ on:
 jobs:
 
   build:
+  
+    env:
+      platform: github
+      user: N-a290
 
     runs-on: ubuntu-latest
 
@@ -22,3 +26,7 @@ jobs:
     - name: "Mostrar mensaje"
       run: echo "Hello Wordls"
             
+    - name: "Mostrar variables de entorno"
+      run: |
+        echo "Mostrando variable platform: ${{ env.platform }}" 
+        echo "Mostrando variable user: ${{ env.user }}" 
