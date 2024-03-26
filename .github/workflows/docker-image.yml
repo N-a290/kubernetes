@@ -31,3 +31,7 @@ jobs:
       run: |
         echo "Mostrando variable platform: ${{ env.platform }}" 
         echo "Mostrando variable user: ${{ env.user }}" 
+
+    - name: "Mostrar variables de entorno globales"
+      run: |
+        echo "Mostrando evento: ${{ toJson(github.event) }}" 
