@@ -15,7 +15,9 @@ jobs:
   
     env:
       platform: github
-      user: N-a290
+
+      username: ${{ secrets.USERNAME }}
+      password: ${{ secrets.PASSWORD }}
 
     runs-on: ubuntu-latest
 
@@ -27,10 +29,11 @@ jobs:
       run: echo "Hello Wordls"
             
     - name: "Mostrar variables de entorno"
-      if: ${{ env.platform == 'azure' }}
+      # if: ${{ env.platform == 'azure' }}
       run: |
         echo "Mostrando variable platform: ${{ env.platform }}" 
-        echo "Mostrando variable user: ${{ env.user }}" 
+        echo "Mostrando secreto username: ${{ env.username }}" 
+        echo "Mostrando secreto password: ${{ env.password }}" 
 
     - name: "Mostrar variables de entorno globales"
       run: |
