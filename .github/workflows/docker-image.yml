@@ -27,6 +27,7 @@ jobs:
       run: echo "Hello Wordls"
             
     - name: "Mostrar variables de entorno"
+      if: ${{ env.platform == 'azure' }}
       run: |
         echo "Mostrando variable platform: ${{ env.platform }}" 
         echo "Mostrando variable user: ${{ env.user }}" 
